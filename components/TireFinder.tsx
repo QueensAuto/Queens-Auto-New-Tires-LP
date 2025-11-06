@@ -1,7 +1,9 @@
-import React, { useEffect } from 'react';
+// Fix: Changed React import to namespace import to ensure JSX types are resolved correctly.
+import * as React from 'react';
 
 const TireFinder: React.FC = () => {
-    useEffect(() => {
+    // Fix: Use React.useEffect to align with the namespace import.
+    React.useEffect(() => {
         const script = document.createElement('script');
         script.src = "https://tireflow.ezytire.com/6057/1/Script/Client.js";
         script.async = true;

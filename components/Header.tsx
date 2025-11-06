@@ -1,4 +1,5 @@
-import React from 'react';
+// Fix: Changed React import to namespace import to ensure JSX types are resolved correctly.
+import * as React from 'react';
 
 const Header: React.FC = () => {
     return (

@@ -1,7 +1,8 @@
-
-import React from 'react';
+// Fix: Changed React import to namespace import to ensure JSX types are resolved correctly.
+import * as React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';
+import './index.css';
 
 const rootElement = document.getElementById('root');
 if (!rootElement) {

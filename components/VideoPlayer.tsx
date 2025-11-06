@@ -1,6 +1,5 @@
-/// <reference types="react" />
-
-import React, { useEffect } from 'react';
+// Fix: Changed React import to namespace import to ensure JSX types are resolved correctly.
+import * as React from 'react';
 
 // For TypeScript to recognize the custom wistia-player element
 declare global {
@@ -16,7 +15,8 @@ const WISTIA_VIDEO_ID = 'zx3wmw2c10';
 const WISTIA_ASPECT_RATIO = '1.7777777777777777';
 
 const VideoPlayer: React.FC = () => {
-    useEffect(() => {
+    // Fix: Use React.useEffect to align with the namespace import.
+    React.useEffect(() => {
         const addElement = (tagName: 'script' | 'style', id: string, innerHTML?: string, attributes?: Record<string, string>) => {
             if (document.getElementById(id)) return null;
             const element = document.createElement(tagName);
