@@ -1,3 +1,5 @@
+/// <reference types="react" />
+
 import React, { useEffect } from 'react';
 
 // For TypeScript to recognize the custom wistia-player element
@@ -31,7 +33,6 @@ const VideoPlayer: React.FC = () => {
             return element;
         };
 
-        const playerScript = addElement('script', 'wistia-player-script', undefined, { src: 'https://fast.wistia.com/player.js', async: 'true' });
         const embedScript = addElement('script', `wistia-embed-script-${WISTIA_VIDEO_ID}`, undefined, { src: `https://fast.wistia.com/embed/${WISTIA_VIDEO_ID}.js`, async: 'true', type: 'module' });
         
         const styleContent = `
@@ -46,7 +47,6 @@ const VideoPlayer: React.FC = () => {
 
         // Cleanup function to remove elements on component unmount
         return () => {
-            playerScript?.remove();
             embedScript?.remove();
             wistiaStyle?.remove();
         };
